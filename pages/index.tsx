@@ -20,19 +20,19 @@ export default function Home() {
         <C.FormLabel>
         
           <C.LabelText>Email</C.LabelText>
-          <C.InputLabel type="email" placeholder="email" name="email" id="" />
+          <C.InputLabel type="email" placeholder="Digite seu email" name="email" id="" />
           <C.LabelText>Senha</C.LabelText>
           <C.InputLabel
           className="input"
             type="password"
-            placeholder="password"
+            placeholder="Digite sua senha"
             name="password"
             id=""
             />
           <p>
             Não tem cadastro? <Link href="/register">Cadastre-se agora!</Link>
           </p>
-          <Link href="/register">
+          <Link href="/">
             <C.ButtonPage>Entrar</C.ButtonPage>
           </Link>
         </C.FormLabel>

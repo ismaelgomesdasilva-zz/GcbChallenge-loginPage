@@ -35,6 +35,10 @@ export const FormLabel = styled.div`
   a {
     cursor: pointer;
     color: #423b32;
+    transition: all 0.3s ease-in-out;
+    :hover{
+     color: #e8ac5a
+    }
   }
 
 
@@ -57,6 +61,12 @@ export const InputLabel = styled.input`
   font-size: 15px;
   line-height: 36px;
   color: #423b32;
+  transition: all 0.3s ease-in-out;
+  :focus{
+    outline: none;
+    border: none;
+  border-bottom: 2px solid #e8ac5a;
+  }
   
 `;
 export const LabelText = styled.label`
