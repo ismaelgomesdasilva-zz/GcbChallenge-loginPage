@@ -24,16 +24,18 @@ export const FormLabel = styled.div`
   align-items: flex-start;
   justify-content: center;
   margin-left: -400px;
+
+  
   p {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
-    line-height: 22px;
+    font-size: 15px;
+    
     text-align: center;
     color: #423b32;
     margin-left: 50px;
-    margin-top: -20px;
+    margin-top: -10px;
   }
   a {
     cursor: pointer;
@@ -53,7 +55,7 @@ export const InputLabel = styled.input`
   border: none;
   border-bottom: 2px solid #423b32;
   margin-left: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -74,7 +76,7 @@ export const LabelText = styled.label`
 
 export const Description = styled.div`
   width: 600px;
-  margin-left: 50px;
+  margin-left: 100px;
   h1 {
     font-family: "Poppins";
     font-style: normal;
@@ -92,7 +94,7 @@ export const Description = styled.div`
 
     color: #423b32;
     width: 400px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 `;
 export const backgroundimg = styled.div`
@@ -101,8 +103,8 @@ export const backgroundimg = styled.div`
   left: 1450px;
 `;
 export const ButtonPage = styled.button`
-width: 200px;
-height: 65px;
+width: 150px;
+height: 50px;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 500;
@@ -116,11 +118,16 @@ margin-left: 50px;
 margin-top: 40px;
 color: #F5CA9C;
 `
-export const imgBackground = styled.div`
-position: absolute;
-right: 0;
+
+export const CheckboxButton = styled.input`
+ background-color: #423b32;
 `
 export const  ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
  
+`
+
+export const imgBackground = styled.div`
+position: absolute;
+right: 0;
 `

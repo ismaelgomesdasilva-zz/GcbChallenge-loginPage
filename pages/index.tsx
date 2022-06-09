@@ -2,10 +2,10 @@ import * as C from "./stylehome";
 import logo from "../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-
+import backgroundimg from "../Assets/background.png"
 export default function Home() {
   return (
-    <>
+    <C.ContainerMain>
       <C.Container>
         <C.Description>
           <h1>Até onde conseguimos chegar?</h1>
@@ -36,14 +36,15 @@ export default function Home() {
             <C.ButtonPage>Entrar</C.ButtonPage>
           </Link>
         </C.FormLabel>
-          {/* <C.backgroundimg>
+        <C.imgBackground>
 
-            <Image src={background}></Image>
-          </C.backgroundimg> */}
+<Image src={backgroundimg} width={
+350} height={600} />
+  </C.imgBackground>
       </C.Container>
 
            
       
-    </>
+    </C.ContainerMain>
   );
 }
