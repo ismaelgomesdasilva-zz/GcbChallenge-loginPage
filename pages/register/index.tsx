@@ -30,10 +30,14 @@ export default function Home() {
             name="password"
             id=""
             />
-          <p>
+            <C.CheckboxAling>
+
+
           <C.CheckboxButton type = "checkbox" className="checkbox"/>
+          <p>
             Eu li e aceito os <Link href="/register">termos de condições</Link>
           </p>
+            </C.CheckboxAling>
           <Link href="/register">
             <C.ButtonPage>Cadastrar</C.ButtonPage>
           </Link>

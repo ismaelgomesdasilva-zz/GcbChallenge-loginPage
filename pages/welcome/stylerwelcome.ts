@@ -8,7 +8,10 @@ export const Container = styled.section`
   justify-content: center;
 
   gap: 350px;
-
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-attachment: fixed;
 `;
 export const FormLabel = styled.div`
   width: 460px;
@@ -21,12 +24,14 @@ export const FormLabel = styled.div`
   align-items: flex-start;
   justify-content: center;
   margin-left: -400px;
+
+  
   p {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
-    line-height: 22px;
+    font-size: 15px;
+    
     text-align: center;
     color: #423b32;
     margin-left: 50px;
@@ -36,7 +41,17 @@ export const FormLabel = styled.div`
     cursor: pointer;
     color: #423b32;
   }
+h1{
+  font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
 
+    color: #423b32;
+    width: 400px;
+   margin: auto;
+    text-align: center;
+}
 
 
 
@@ -71,7 +86,7 @@ export const LabelText = styled.label`
 
 export const Description = styled.div`
   width: 600px;
-  margin-left: 50px;
+  margin-left: 100px;
   h1 {
     font-family: "Poppins";
     font-style: normal;
@@ -89,7 +104,7 @@ export const Description = styled.div`
 
     color: #423b32;
     width: 400px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 `;
 export const backgroundimg = styled.div`
@@ -113,11 +128,16 @@ margin-left: 50px;
 margin-top: 40px;
 color: #F5CA9C;
 `
-export const imgBackground = styled.div`
-position: absolute;
-right: 0;
+
+export const CheckboxButton = styled.input`
+ background-color: #423b32;
 `
 export const  ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
  
+`
+
+export const imgBackground = styled.div`
+position: absolute;
+right: 0;
 `

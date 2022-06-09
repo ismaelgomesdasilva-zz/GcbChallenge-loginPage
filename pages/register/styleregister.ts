@@ -6,12 +6,8 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 350px;
-  background-image: url("background.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-attachment: fixed;
+  
 `;
 export const FormLabel = styled.div`
   width: 460px;
@@ -30,12 +26,11 @@ export const FormLabel = styled.div`
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
-    
+    font-size: 10px;
+    line-height: 22px;
     text-align: center;
     color: #423b32;
-    margin-left: 50px;
-    margin-top: -10px;
+   
   }
   a {
     cursor: pointer;
@@ -76,7 +71,7 @@ export const LabelText = styled.label`
 
 export const Description = styled.div`
   width: 600px;
-  margin-left: 100px;
+  margin-left: 50px;
   h1 {
     font-family: "Poppins";
     font-style: normal;
@@ -94,7 +89,7 @@ export const Description = styled.div`
 
     color: #423b32;
     width: 400px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
 `;
 export const backgroundimg = styled.div`
@@ -121,6 +116,12 @@ color: #F5CA9C;
 
 export const CheckboxButton = styled.input`
  background-color: #423b32;
+
+`
+export const CheckboxAling = styled.div`
+display: flex;
+align-items: center;
+margin-left: 50px;
 `
 export const  ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
