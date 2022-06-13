@@ -2,23 +2,39 @@ import * as C from "./styleregister";
 import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useState} from "react";     
+import { useState } from "react";
 import backgroundimg from "../../Assets/background.png";
-import Router, { useRouter } from "next/router";
-export default function register() {
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Router from "next/router";
+function register() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const emailRegex = /^([a-zA-Z][^<>\"!@[\]#$%¨&*()~^:;ç,\-´`=+{}º\|/\\?]{1,})@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const senhaRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/
+  
+  function submitForm() {
+    let users = {
+      nameCad: name,
+      emailCad: email,
+      passwordCad: password,
+    };
+    localStorage.setItem("listUser", JSON.stringify(users));
 
-const [name, setName] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
-function submitForm(){
-  let users = {
-    nameCad: name,
-    emailCad: email,
-    passwordCad: password 
+    if(name.length < 5){
+      toast.error('Informe seu nome completo')
+    }
+    if (!emailRegex.test(String(email).toLowerCase())) {
+      toast.error("Informe um email vailido");
+    }
+    if(!senhaRegex.test(String(password))){
+      toast.error('Informe uma senha valida')
+    } else{
+      Router.push('/')
+    }
   }
-  localStorage.setItem('listUser', JSON.stringify(users))
 
-}
   return (
     <C.ContainerMain>
       <C.Container>
@@ -33,27 +49,37 @@ function submitForm(){
 
         <C.FormLabel>
           <C.LabelText>Seu nome</C.LabelText>
-          <C.InputLabel type="text" placeholder="Nome" name="name" id="name" onChange={e => setName(e.target.value)}/>
+          <C.InputLabel
+            type="text"
+            placeholder="Nome"
+            name="name"
+            id="name"
+            onChange={(e) => setName(e.target.value)}
+          />
           <C.LabelText>Email</C.LabelText>
-          <C.InputLabel type="email" placeholder="email" name="email" id="email" onChange={e => setEmail(e.target.value)}/>
+          <C.InputLabel
+            type="email"
+            placeholder="email"
+            name="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <C.LabelText>Senha</C.LabelText>
           <C.InputLabel
             className="input"
             type="password"
             placeholder="password"
             name="password"
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <C.CheckboxAling>
             <C.CheckboxButton type="checkbox" className="checkbox" />
             <p>
-              Eu li e aceito os{" "}
-              <Link href="/register">termos de condições</Link>
+              Eu li e aceito os <Link href="/">termos de condições</Link>
             </p>
           </C.CheckboxAling>
-          <Link href="/">
-            <C.ButtonPage onClick={submitForm}>Cadastrar</C.ButtonPage>
-          </Link>
+
+          <C.ButtonPage onClick={submitForm}>Cadastrar</C.ButtonPage>
         </C.FormLabel>
         <C.imgBackground>
           <Image src={backgroundimg} width={350} height={600} />
@@ -62,3 +88,4 @@ function submitForm(){
     </C.ContainerMain>
   );
 }
+export default register
