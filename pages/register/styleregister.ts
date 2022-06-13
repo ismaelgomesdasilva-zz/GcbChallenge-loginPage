@@ -30,7 +30,7 @@ export const FormLabel = styled.div`
     line-height: 22px;
     text-align: center;
     color: #423b32;
-   
+    
   }
   a {
     cursor: pointer;
@@ -123,7 +123,7 @@ display: flex;
 align-items: center;
 margin-left: 50px;
 `
-export const  ContainerMain = styled.section`
+export const ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
  
 `
@@ -131,4 +131,6 @@ background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
 export const imgBackground = styled.div`
 position: absolute;
 right: 0;
+pointer-events: none;
+
 `

@@ -3,7 +3,23 @@ import logo from "../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import backgroundimg from "../Assets/background.png"
+import { useState } from "react";
 export default function Home() {
+
+const [userEmail, setUserEmail] = useState()
+const [password, setPassword] = useState()
+
+function loginCheck(){
+  const user = JSON.parse(localStorage.getItem('listUser'))
+ console.log(user)
+  
+  
+ 
+}
+
+
+
+
   return (
     <C.ContainerMain>
       <C.Container>
@@ -20,7 +36,9 @@ export default function Home() {
         <C.FormLabel>
         
           <C.LabelText>Email</C.LabelText>
-          <C.InputLabel type="email" placeholder="Digite seu email" name="email" id="" />
+          <C.InputLabel type="email" placeholder="Digite seu email" name="email" id="" 
+          onChange={e => setUserEmail(e.target.value)}
+          />
           <C.LabelText>Senha</C.LabelText>
           <C.InputLabel
           className="input"
@@ -28,12 +46,13 @@ export default function Home() {
             placeholder="Digite sua senha"
             name="password"
             id=""
+            onChange={e => setPassword(e.target.value)}
             />
           <p>
             Não tem cadastro? <Link href="/register">Cadastre-se agora!</Link>
           </p>
           <Link href="/">
-            <C.ButtonPage>Entrar</C.ButtonPage>
+            <C.ButtonPage onClick={loginCheck}>Entrar</C.ButtonPage>
           </Link>
         </C.FormLabel>
         <C.imgBackground>
@@ -43,7 +62,7 @@ export default function Home() {
   </C.imgBackground>
       </C.Container>
 
-           
+
       
     </C.ContainerMain>
   );

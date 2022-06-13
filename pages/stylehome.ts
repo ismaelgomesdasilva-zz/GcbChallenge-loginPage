@@ -126,6 +126,7 @@ color: #F5CA9C;
 export const imgBackground = styled.div`
 position: absolute;
 right: 0;
+pointer-events: none;
 `
 export const  ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
