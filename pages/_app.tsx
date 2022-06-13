@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import { ToastContainer, toast } from 'react-toastify';
 const GlobalStyle = createGlobalStyle`
   html{
 /*     
@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
       </ThemeProvider>
+      <ToastContainer />
     </>
   )
 }

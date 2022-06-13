@@ -3,7 +3,7 @@ import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import backgroundimg from "../../Assets/background.png"
-export default function Home() {
+ function welcome() {
   return (
     <C.ContainerMain>
       <C.Container>
@@ -31,3 +31,4 @@ export default function Home() {
     </C.ContainerMain>
   );
 }
+export default welcome

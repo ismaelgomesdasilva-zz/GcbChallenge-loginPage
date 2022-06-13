@@ -4,17 +4,30 @@ import Image from "next/image";
 import Link from "next/link";
 import backgroundimg from "../Assets/background.png"
 import { useState } from "react";
-export default function Home() {
-
-const [userEmail, setUserEmail] = useState()
-const [password, setPassword] = useState()
-
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Router from "next/router";
+ function Home() {
+const [userEmail, setUserEmail] = useState('')
+const [password, setPassword] = useState('')
 function loginCheck(){
   const user = JSON.parse(localStorage.getItem('listUser'))
- console.log(user)
   
-  
+  if(setUserEmail.length < 0 ){
+    console.log('oi')
+  }
+  if(userEmail != user.emailCad){
+    toast.error('Email não cadastrado')
+  }
+  if(password != user.passwordCad){
+    toast.error('senha incorreta')
+  }
+  if(userEmail === user.emailCad && password === user.passwordCad){
+    toast.success('Usuario logado')
+    Router.push('/welcome')
+  }
  
+  
 }
 
 
@@ -67,3 +80,4 @@ function loginCheck(){
     </C.ContainerMain>
   );
 }
+export default Home
