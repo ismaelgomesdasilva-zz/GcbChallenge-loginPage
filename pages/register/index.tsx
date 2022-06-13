@@ -10,19 +10,13 @@ export default function register() {
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
-
-const router = useRouter()
 function submitForm(){
-  let listUser=[]
   let users = {
     nameCad: name,
     emailCad: email,
-    passwordCad: password
+    passwordCad: password 
   }
-  listUser.push(users)
-  localStorage.setItem('listUser', JSON.stringify(listUser))
-  
-  router.push('/')
+  localStorage.setItem('listUser', JSON.stringify(users))
 
 }
   return (
@@ -57,7 +51,7 @@ function submitForm(){
               <Link href="/register">termos de condições</Link>
             </p>
           </C.CheckboxAling>
-          <Link href="/register">
+          <Link href="/">
             <C.ButtonPage onClick={submitForm}>Cadastrar</C.ButtonPage>
           </Link>
         </C.FormLabel>
