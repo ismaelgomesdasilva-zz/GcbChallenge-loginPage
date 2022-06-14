@@ -1,4 +1,4 @@
-import * as C from "./styleregister";
+import * as C from "../../Styles/styleregister";
 import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,9 +11,10 @@ function register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const emailRegex = /^([a-zA-Z][^<>\"!@[\]#$%¨&*()~^:;ç,\-´`=+{}º\|/\\?]{1,})@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const senhaRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/
-  
+  const [checkbox, setCheckbox] = useState(false);
+  const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+  const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+
   function submitForm() {
     let users = {
       nameCad: name,
@@ -22,16 +23,19 @@ function register() {
     };
     localStorage.setItem("listUser", JSON.stringify(users));
 
-    if(name.length < 5){
-      toast.error('Informe seu nome completo')
+    if (name.length < 5) {
+      toast.error("Informe seu nome completo");
     }
-    if (!emailRegex.test(String(email).toLowerCase())) {
+    if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
       toast.error("Informe um email vailido");
     }
-    if(!senhaRegex.test(String(password))){
-      toast.error('Informe uma senha valida')
-    } else{
-      Router.push('/')
+    if (!PASSWORD_REGEX.test(String(password))) {
+      toast.error("Informe uma senha valida");
+    }
+    if (!checkbox) {
+      toast.error("Verifique e aceite os termos de condições");
+    } else {
+      Router.push("/");
     }
   }
 
@@ -42,7 +46,7 @@ function register() {
           <h1>Até onde conseguimos chegar?</h1>
           <p>
             A <strong>Curiosidade</strong> de descobrir essa resposta é a que
-            <strong>nos move</strong> no dia-a-dia.
+            <strong> nos move</strong> no dia-a-dia.
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
@@ -51,7 +55,7 @@ function register() {
           <C.LabelText>Seu nome</C.LabelText>
           <C.InputLabel
             type="text"
-            placeholder="Nome"
+            placeholder="Digite seu nome"
             name="name"
             id="name"
             onChange={(e) => setName(e.target.value)}
@@ -59,7 +63,7 @@ function register() {
           <C.LabelText>Email</C.LabelText>
           <C.InputLabel
             type="email"
-            placeholder="email"
+            placeholder="Digite seu email"
             name="email"
             id="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -68,12 +72,16 @@ function register() {
           <C.InputLabel
             className="input"
             type="password"
-            placeholder="password"
+            placeholder="Digite sua senha"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <C.CheckboxAling>
-            <C.CheckboxButton type="checkbox" className="checkbox" />
+            <C.CheckboxButton
+              type="checkbox"
+              className="checkbox"
+              onChange={(e) => setCheckbox(e.target.value)}
+            />
             <p>
               Eu li e aceito os <Link href="/">termos de condições</Link>
             </p>
@@ -88,4 +96,4 @@ function register() {
     </C.ContainerMain>
   );
 }
-export default register
+export default register;

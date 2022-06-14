@@ -1,4 +1,4 @@
-import * as C from "./stylehome";
+import * as C from "../Styles/stylehome";
 import logo from "../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,11 +10,14 @@ import Router from "next/router";
  function Home() {
 const [userEmail, setUserEmail] = useState('')
 const [password, setPassword] = useState('')
+
+
 function loginCheck(){
   const user = JSON.parse(localStorage.getItem('listUser'))
   
-  if(setUserEmail.length < 0 ){
-    console.log('oi')
+  if(userEmail === '' ){
+    toast.info('Preencha os campos')
+    return
   }
   if(userEmail != user.emailCad){
     toast.error('Email não cadastrado')
@@ -25,9 +28,7 @@ function loginCheck(){
   if(userEmail === user.emailCad && password === user.passwordCad){
     toast.success('Usuario logado')
     Router.push('/welcome')
-  }
- 
-  
+  } 
 }
 
 
@@ -39,8 +40,8 @@ function loginCheck(){
         <C.Description>
           <h1>Até onde conseguimos chegar?</h1>
           <p>
-            A <strong>Curiosidade</strong> de descobrir essa resposta é a que{" "}
-            <strong>nos move</strong> no dia-a-dia.
+            A <strong>Curiosidade</strong> de descobrir essa resposta é a que
+            <strong> nos move</strong> no dia-a-dia.
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
@@ -64,9 +65,9 @@ function loginCheck(){
           <p>
             Não tem cadastro? <Link href="/register">Cadastre-se agora!</Link>
           </p>
-          <Link href="/">
+          
             <C.ButtonPage onClick={loginCheck}>Entrar</C.ButtonPage>
-          </Link>
+          
         </C.FormLabel>
         <C.imgBackground>
 
