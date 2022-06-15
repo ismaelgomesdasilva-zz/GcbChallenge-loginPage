@@ -42,8 +42,9 @@ export const FormLabel = styled.div`
     justify-content: center;
     margin: 0;
     background: transparent;
-    width: 100%;
-    height: 100%;
+    
+    width: 100vw;
+    height: 100vh;
     p, a{
       margin: 0;
       color:#b3b3b3;
@@ -157,7 +158,7 @@ export const imgNone = styled.div`
 display: none;
 @media (max-width: 1000px){
     display: block;
-    
+    margin-right: 1rem;
     
   }
 `

@@ -22,6 +22,10 @@ function welcome() {
       Router.push('/')
     }
   }, []);
+  function logout(){
+    Router.push('/')
+    localStorage.removeItem('Token')
+  }
 
   return (
     <C.ContainerMain>
@@ -51,6 +55,7 @@ function welcome() {
         <AiFillFacebook size={50} color="#161c8f"/>
         <AiFillYoutube size={50} color='#cf0000'/>
           </C.aliginIcons>
+        <C.ButtonPage onClick={logout}>Sair</C.ButtonPage>
         </C.FormLabel>
       </Flip>
         <C.imgBackground>

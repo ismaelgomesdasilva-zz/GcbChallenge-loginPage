@@ -14,7 +14,7 @@ function register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
-  const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+  const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
   const PASSWORD_REGEX =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
 
@@ -26,15 +26,12 @@ function register() {
     };
     localStorage.setItem("listUser", JSON.stringify(users));
 
-    if (name.length < 5) {
-      toast.error("Informe seu nome completo");
-    }
     if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
       
-      return toast.error("Informe um email vailido");
+      toast.error('Informe um email valido')
     }
     if (!PASSWORD_REGEX.test(String(password))) {
-      toast.error("Informe uma senha valida");
+      toast.error("Senha deve possuir letra maiscula, minuscula, caracteres especiais e numeros.");
     }
     if (!checkbox) {
       toast.error("Verifique e aceite os termos de condições");

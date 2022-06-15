@@ -30,6 +30,7 @@ if(userEmail === user.emailCad && password === user.passwordCad){
     toast.success('Usuario logado')
     localStorage.setItem('Token', '1320897')
     Router.push('/welcome')
+    
   } 
 }
   return (

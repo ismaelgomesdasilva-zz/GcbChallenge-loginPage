@@ -5,13 +5,6 @@ export const Container = styled.section`
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  gap: 350px;
-  background-image: url("background.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-attachment: fixed;
 `;
 export const FormLabel = styled.div`
   width: 460px;
@@ -23,7 +16,7 @@ export const FormLabel = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-left: -400px;
+ 
 
   
   h3 {
@@ -35,7 +28,16 @@ export const FormLabel = styled.div`
     color: #423b32;
     
   }
+  @media (max-width: 1100px) {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
   
+  }
 h1{
 
     font-weight: 600;
@@ -46,7 +48,13 @@ h1{
     text-align: center;
 }
 
+@media (max-width: 1100px) {
+  h3{
 
+    color:#ffffff;
+  } 
+  
+  }
 
 
 
@@ -75,6 +83,11 @@ export const LabelText = styled.label`
   text-align: center;
   color: #8b6b4a;
   margin-left: 50px;
+  @media (max-width: 1000px){
+    margin: 1.5rem auto;
+    color:#e8ac5a;
+    
+  }
 `;
 
 export const Description = styled.div`
@@ -99,12 +112,12 @@ export const Description = styled.div`
     width: 400px;
     margin-bottom: 80px;
   }
+  @media (max-width: 1100px) {
+    display: none;
+  
+  }
 `;
-export const backgroundimg = styled.div`
-  position: absolute;
 
-  left: 1450px;
-`;
 export const ButtonPage = styled.button`
   width: 9.3rem;
   height: 3.1rem;
@@ -114,8 +127,8 @@ export const ButtonPage = styled.button`
   background: #423b32;
   border-radius: 0.6rem;
   text-align: center;
-  margin-left: 3.1rem;
-  margin-top: 2rem;
+
+ margin: 1rem auto;
   color: #f5ca9c;
   border: none;
   cursor: pointer;
@@ -138,7 +151,11 @@ export const CheckboxButton = styled.input`
 `
 export const  ContainerMain = styled.section`
 background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
- 
+@media (max-width: 1100px) {
+  background: none;
+    background-color: #423B32;
+  
+  }
 `
 
 export const imgBackground = styled.div`
