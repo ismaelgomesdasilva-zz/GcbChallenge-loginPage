@@ -2,6 +2,7 @@ import * as C from "../../Styles/styleregister";
 import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import logoalt from "../../Assets/backnone.png";
 import { useState } from "react";
 import backgroundimg from "../../Assets/background.png";
 import { toast } from "react-toastify";
@@ -12,8 +13,9 @@ function register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
-  const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
-  const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
+  const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+  const PASSWORD_REGEX =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
 
   function submitForm() {
     let users = {
@@ -50,8 +52,10 @@ function register() {
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
-
         <C.FormLabel>
+          <C.imgNone>
+            <Image src={logoalt} />
+          </C.imgNone>
           <C.LabelText>Seu nome</C.LabelText>
           <C.InputLabel
             type="text"

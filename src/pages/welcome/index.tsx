@@ -3,6 +3,7 @@ import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import backgroundimg from "../../Assets/background.png";
 import { useEffect, useState } from "react";
+import Router from "next/router";
 
 interface User {
   nameCad: string;
@@ -14,6 +15,10 @@ function welcome() {
   const [user, setUser] = useState<User>({} as User);
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("listUser")));
+    const token = localStorage.getItem('Token')
+    if(!token){
+      Router.push('/')
+    }
   }, []);
 
   return (

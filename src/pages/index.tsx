@@ -1,5 +1,6 @@
 import * as C from "../Styles/stylehome";
 import logo from "../Assets/logo.png";
+import logoalt from '../Assets/backnone.png'
 import Image from "next/image";
 import Link from "next/link";
 import backgroundimg from "../Assets/background.png"
@@ -7,10 +8,9 @@ import { useState } from "react";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Router from "next/router";
- function Home() {
+function Home() {
 const [userEmail, setUserEmail] = useState('')
 const [password, setPassword] = useState('')
-
 
 function loginCheck(){
   const user = JSON.parse(localStorage.getItem('listUser'))
@@ -25,15 +25,12 @@ function loginCheck(){
   if(password != user.passwordCad){
     toast.error('senha incorreta')
   }
-  if(userEmail === user.emailCad && password === user.passwordCad){
+if(userEmail === user.emailCad && password === user.passwordCad){
     toast.success('Usuario logado')
+    localStorage.setItem('Token', '1320897')
     Router.push('/welcome')
   } 
 }
-
-
-
-
   return (
     <C.ContainerMain>
       <C.Container>
@@ -48,7 +45,10 @@ function loginCheck(){
         
 
         <C.FormLabel>
-        
+          <C.imgNone>
+
+        <Image src={logoalt}  />
+          </C.imgNone>
           <C.LabelText>Email</C.LabelText>
           <C.InputLabel type="email" placeholder="Digite seu email" name="email" id="" 
           onChange={e => setUserEmail(e.target.value)}

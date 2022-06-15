@@ -6,131 +6,180 @@ export const Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 350px;
-  
 `;
 export const FormLabel = styled.div`
-  width: 460px;
-  height: 500px;
+  width: 28rem;
+  height: 31rem;
   background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+  border-radius: 0.6rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-left: -400px;
+  position: relative;
+  z-index: 2;
+ 
 
-  
   p {
-    font-family: "Poppins";
-    font-style: normal;
     font-weight: 500;
-    font-size: 10px;
-    line-height: 22px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
     text-align: center;
     color: #423b32;
-    
+    margin-left: 0.4rem;
   }
   a {
     cursor: pointer;
     color: #423b32;
+    transition: all 0.3s ease-in-out;
+    :hover {
+      color: #e8ac5a;
+    }
   }
-
-
-
-
-
-
-
+  @media (max-width: 1000px) {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    p, a{
+      margin: 0;
+      color:#b3b3b3;
+      font-size: 0.9rem;
+      text-align: center;
+      
+    }
+  }
 `;
 
 export const InputLabel = styled.input`
   width: 75%;
   border: none;
-  border-bottom: 2px solid #423b32;
-  margin-left: 50px;
-  margin-bottom: 20px;
-  font-family: "Poppins";
-  font-style: normal;
+  border-bottom: 0.15rem solid #423b32;
+  margin-left: 3.2rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 36px;
+  font-size: 1rem;
+  line-height: 2.2rem;
   color: #423b32;
-  
+  transition: all 0.3s ease-in-out;
+  :focus {
+    outline: none;
+    border: none;
+    border-bottom: 0.15rem solid #e8ac5a;
+  }
+  @media (max-width: 1000px){
+    margin: 0;
+    margin-bottom: 1rem;
+    width: 75%;
+    background-color: transparent;
+    border-bottom: 0.15rem solid #b3b3b3;
+    color: #b3b3b3;
+    
+    :focus{
+      outline: none;
+    border: none;
+    border-bottom: 0.15rem solid #e8ac5a;
+    }
+  }
 `;
 export const LabelText = styled.label`
-  font-family: "Poppins";
-  font-style: normal;
   font-weight: 500;
-  font-size: 25px;
-  text-align: center;
+  font-size: 1.6rem;
   color: #8b6b4a;
-  margin-left: 50px;
+  margin-left: 3.1rem;
+  @media (max-width: 1000px){
+    margin: 1.5rem auto;
+    color:#e8ac5a;
+    
+  }
 `;
 
 export const Description = styled.div`
-  width: 600px;
-  margin-left: 50px;
+  width: 37.5rem;
   h1 {
-    font-family: "Poppins";
-    font-style: normal;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 2.2rem;
     color: #423b32;
-    margin-bottom: 50px;
-    width: 500px;
+    margin-bottom: 3rem;
+    width: 32rem;
   }
   p {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-
+    font-size: 1.6rem;
     color: #423b32;
-    width: 400px;
-    margin-bottom: 50px;
+    width: 25rem;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 1000px) {
+    display: none;
+    
   }
 `;
-export const backgroundimg = styled.div`
-  position: absolute;
-
-  left: 1450px;
-`;
 export const ButtonPage = styled.button`
-width: 150px;
-height: 50px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 36px;
-/* identical to box height */
-background: #423B32;
-border-radius: 10px;
-text-align: center;
-margin-left: 50px;
-margin-top: 40px;
-color: #F5CA9C;
-`
+  width: 9.3rem;
+  height: 3.1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.2rem;
+  background: #423b32;
+  border-radius: 0.6rem;
+  text-align: center;
+  margin-left: 3.1rem;
+  margin-top: 2rem;
+  color: #f5ca9c;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+  :hover {
+    background-color: #f5ca9c;
+    color: #423b32;
+    border: none;
+  }
+  @media (max-width: 1000px){
+    margin:1rem auto;
+    background-color: #fff;
+    color: #423b32;
+  }
+`;
 
 export const CheckboxButton = styled.input`
- background-color: #423b32;
-
-`
+ margin-right: 0.1rem;
+ margin-left: 3rem;
+ @media (max-width: 1000px){
+  margin-right: 0.8rem;
+ margin-left: 0;
+ }
+`;
 export const CheckboxAling = styled.div`
-display: flex;
-align-items: center;
-margin-left: 50px;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+`;
 export const ContainerMain = styled.section`
-background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
- 
-`
+  background: linear-gradient(to right, #ffebd6 0, #ffebd6 63%, #423b32 42%);
+  @media (max-width: 1000px) {
+    background: none;
+    background-color: #423b32;
+  }
+`;
 
 export const imgBackground = styled.div`
-position: absolute;
-right: 0;
-pointer-events: none;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+`;
 
-`
+export const imgNone = styled.div`
+display: none;
+@media (max-width: 1000px){
+    display: block;
+    
+    
+  }
+  `

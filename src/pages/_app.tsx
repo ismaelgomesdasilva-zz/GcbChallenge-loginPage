@@ -1,17 +1,15 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 const GlobalStyle = createGlobalStyle`
   html{
-/*     
-    background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%); */
+   
   }
   
-  body {
+  body,h1,h2,h3,p,a,input,button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
-    
+    font-family: 'Poppins';
    
   }
   
