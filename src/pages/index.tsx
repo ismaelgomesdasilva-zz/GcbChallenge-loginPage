@@ -1,4 +1,5 @@
 import * as C from "../Styles/stylehome";
+import Fade from 'react-reveal/Fade';
 import logo from "../Assets/logo.png";
 import logoalt from '../Assets/backnone.png'
 import Image from "next/image";
@@ -33,7 +34,10 @@ if(userEmail === user.emailCad && password === user.passwordCad){
 }
   return (
     <C.ContainerMain>
+
+      
       <C.Container>
+      <Fade left>
         <C.Description>
           <h1>Até onde conseguimos chegar?</h1>
           <p>
@@ -42,11 +46,11 @@ if(userEmail === user.emailCad && password === user.passwordCad){
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
-        
+        </Fade>
 
+      <Fade right>
         <C.FormLabel>
           <C.imgNone>
-
         <Image src={logoalt}  />
           </C.imgNone>
           <C.LabelText>Email</C.LabelText>
@@ -69,6 +73,7 @@ if(userEmail === user.emailCad && password === user.passwordCad){
             <C.ButtonPage onClick={loginCheck}>Entrar</C.ButtonPage>
           
         </C.FormLabel>
+        </Fade>
         <C.imgBackground>
 
 <Image src={backgroundimg} width={

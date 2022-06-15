@@ -4,7 +4,9 @@ import Image from "next/image";
 import backgroundimg from "../../Assets/background.png";
 import { useEffect, useState } from "react";
 import Router from "next/router";
-
+import Fade from 'react-reveal/Fade';
+import {AiOutlineInstagram, AiFillFacebook, AiFillYoutube} from 'react-icons/ai'
+import Flip from 'react-reveal/Flip'
 interface User {
   nameCad: string;
   emailCad: string;
@@ -24,6 +26,8 @@ function welcome() {
   return (
     <C.ContainerMain>
       <C.Container>
+        <Fade left>
+
         <C.Description>
           <h1>Até onde conseguimos chegar?</h1>
           <p>
@@ -32,15 +36,23 @@ function welcome() {
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
+        </Fade>
+      <Flip left>
 
         <C.FormLabel>
-          <h1>Olá {user.nameCad}</h1>
-          <h2>
+          <h1>Olá <br/>{user.nameCad}</h1>
+          <h3>
             Seja bem-vindo a nossa plataforma, é um prazer ter você aqui!
-            estamos em fase de teste e logo logo será implementado as boas
-            vindas formais!
-          </h2>
+            Ainda estamos em desenvolvimento, porém enquanto isso fique por dentro das nossas redes sociais! 
+          </h3>
+          <C.aliginIcons>
+
+        <AiOutlineInstagram size={50} color="#ed8530"/>
+        <AiFillFacebook size={50} color="#161c8f"/>
+        <AiFillYoutube size={50} color='#cf0000'/>
+          </C.aliginIcons>
         </C.FormLabel>
+      </Flip>
         <C.imgBackground>
           <Image src={backgroundimg} width={350} height={600} />
         </C.imgBackground>

@@ -9,7 +9,9 @@
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
     "react-is": "^18.1.0",
+    "react-reveal": "^1.2.2",
     "react-toastify": "^9.0.4",
     "styled-components": "^5.3.5"
   },

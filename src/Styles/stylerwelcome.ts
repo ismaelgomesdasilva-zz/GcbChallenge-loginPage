@@ -26,30 +26,23 @@ export const FormLabel = styled.div`
   margin-left: -400px;
 
   
-  p {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    
+  h3 {
+    width: 25rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 10px auto;
     text-align: center;
     color: #423b32;
-    margin-left: 50px;
-    margin-top: -10px;
+    
   }
-  a {
-    cursor: pointer;
-    color: #423b32;
-  }
+  
 h1{
-  font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
 
-    color: #423b32;
-    width: 400px;
-   margin: auto;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 10px auto;
+    
+    color: #e8ac5a;
     text-align: center;
 }
 
@@ -113,21 +106,32 @@ export const backgroundimg = styled.div`
   left: 1450px;
 `;
 export const ButtonPage = styled.button`
-width: 150px;
-height: 50px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 36px;
-/* identical to box height */
-background: #423B32;
-border-radius: 10px;
-text-align: center;
-margin-left: 50px;
-margin-top: 40px;
-color: #F5CA9C;
-`
+  width: 9.3rem;
+  height: 3.1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2.2rem;
+  background: #423b32;
+  border-radius: 0.6rem;
+  text-align: center;
+  margin-left: 3.1rem;
+  margin-top: 2rem;
+  color: #f5ca9c;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+  :hover {
+    background-color: #f5ca9c;
+    color: #423b32;
+    border: none;
+  }
+  @media (max-width: 1000px){
+    margin:1rem auto;
+    background-color: #fff;
+    color: #423b32;
+  }
+`;
 
 export const CheckboxButton = styled.input`
  background-color: #423b32;
@@ -140,4 +144,10 @@ background: linear-gradient(to right, #FFEBD6 0, #FFEBD6  63%, #423B32 42%);
 export const imgBackground = styled.div`
 position: absolute;
 right: 0;
+`
+export const aliginIcons = styled.div`
+display: flex;
+gap: 1rem;
+margin: 10px auto;
+cursor: pointer;
 `

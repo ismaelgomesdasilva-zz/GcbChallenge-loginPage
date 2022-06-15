@@ -1,4 +1,5 @@
 import * as C from "../../Styles/styleregister";
+import Fade from 'react-reveal/Fade';
 import logo from "../../Assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +30,8 @@ function register() {
       toast.error("Informe seu nome completo");
     }
     if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
-      toast.error("Informe um email vailido");
+      
+      return toast.error("Informe um email vailido");
     }
     if (!PASSWORD_REGEX.test(String(password))) {
       toast.error("Informe uma senha valida");
@@ -42,8 +44,11 @@ function register() {
   }
 
   return (
+    
+    
     <C.ContainerMain>
       <C.Container>
+      <Fade left>
         <C.Description>
           <h1>Até onde conseguimos chegar?</h1>
           <p>
@@ -52,6 +57,8 @@ function register() {
           </p>
           <Image src={logo} width="400px" height="120px" />
         </C.Description>
+        </Fade>
+        <Fade right>
         <C.FormLabel>
           <C.imgNone>
             <Image src={logoalt} />
@@ -93,6 +100,7 @@ function register() {
 
           <C.ButtonPage onClick={submitForm}>Cadastrar</C.ButtonPage>
         </C.FormLabel>
+        </Fade>
         <C.imgBackground>
           <Image src={backgroundimg} width={350} height={600} />
         </C.imgBackground>
