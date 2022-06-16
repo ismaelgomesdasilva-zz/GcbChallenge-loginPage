@@ -9,23 +9,37 @@ import backgroundimg from "../../Assets/background.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
+
 function register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checkbox, setCheckbox] = useState(false);
+  const [listUserSet, setListUserSet] = useState('')
   const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
   const PASSWORD_REGEX =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
 
+  
+
   function submitForm() {
-    let users = {
+    let allUser = JSON.parse(localStorage.getItem('listUser' ) || '[]')
+   
+    allUser.push({
       nameCad: name,
       emailCad: email,
       passwordCad: password,
-    };
-    localStorage.setItem("listUser", JSON.stringify(users));
+   }) 
+    localStorage.setItem("listUser", JSON.stringify(allUser));
+  
 
+
+
+
+
+
+
+    
     if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
       
       toast.error('Informe um email valido')
@@ -35,7 +49,8 @@ function register() {
     }
     if (!checkbox) {
       toast.error("Verifique e aceite os termos de condições");
-    } else {
+    } 
+    else {
       Router.push("/");
     }
   }
@@ -95,7 +110,7 @@ function register() {
             </p>
           </C.CheckboxAling>
 
-          <C.ButtonPage onClick={submitForm}>Cadastrar</C.ButtonPage>
+          <C.ButtonPage type='button' onClick={submitForm}>Cadastrar</C.ButtonPage>
         </C.FormLabel>
         </Fade>
         <C.imgBackground>
