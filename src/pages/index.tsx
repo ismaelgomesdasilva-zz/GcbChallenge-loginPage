@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
+import { Button } from "../components/Button";
 function Home() {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,7 +83,7 @@ function Home() {
             <p>
               Não tem cadastro? <Link href="/register">Cadastre-se agora!</Link>
             </p>
-
+            {/* <Button onClick={loginCheck} type='button' actionButton='Entrar'/> */}
             <C.ButtonPage onClick={loginCheck}>Entrar</C.ButtonPage>
           </C.FormLabel>
         </Fade>

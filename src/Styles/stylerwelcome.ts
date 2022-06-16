@@ -5,6 +5,7 @@ export const Container = styled.section`
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 export const FormLabel = styled.div`
   width: 460px;

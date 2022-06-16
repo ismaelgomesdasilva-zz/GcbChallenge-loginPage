@@ -115,6 +115,27 @@ export const Description = styled.div`
     
   }
 `;
+
+export const imgBackground = styled.div`
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+`;
+export const ContainerMain = styled.section`
+  background: linear-gradient(to right, #ffebd6 0, #ffebd6 63%, #423b32 42%);
+  @media (max-width: 1000px) {
+    background: none;
+    background-color: #423b32;
+  }
+`;
+export const imgNone = styled.div`
+display: none;
+@media (max-width: 1000px){
+    display: block;
+    margin-right: 1rem;
+    
+  }
+`
 export const ButtonPage = styled.button`
   width: 9.3rem;
   height: 3.1rem;
@@ -142,23 +163,3 @@ export const ButtonPage = styled.button`
     color: #423b32;
   }
 `;
-export const imgBackground = styled.div`
-  position: absolute;
-  right: 0;
-  pointer-events: none;
-`;
-export const ContainerMain = styled.section`
-  background: linear-gradient(to right, #ffebd6 0, #ffebd6 63%, #423b32 42%);
-  @media (max-width: 1000px) {
-    background: none;
-    background-color: #423b32;
-  }
-`;
-export const imgNone = styled.div`
-display: none;
-@media (max-width: 1000px){
-    display: block;
-    margin-right: 1rem;
-    
-  }
-`
