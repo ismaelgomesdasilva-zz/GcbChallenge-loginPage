@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-
 export const ButtonPage = styled.button`
   width: 9.3rem;
   height: 3.1rem;
@@ -9,8 +8,8 @@ export const ButtonPage = styled.button`
   background: #423b32;
   border-radius: 0.6rem;
   text-align: center;
-  margin-left: 3.1rem;
-  margin-top: 2rem;
+
+ margin: 1rem auto;
   color: #f5ca9c;
   border: none;
   cursor: pointer;
@@ -21,9 +20,4 @@ export const ButtonPage = styled.button`
     color: #423b32;
     border: none;
   }
-  @media (max-width: 1000px){
-    margin:1rem auto;
-    background-color: #fff;
-    color: #423b32;
-  }
-`;
+  `

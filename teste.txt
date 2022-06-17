@@ -1,3 +1,0 @@
-Const users = ( pega do local storage)
-Const newUser = igual função
-Const setUsers= [...users,newUser]

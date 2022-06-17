@@ -1,17 +1,18 @@
-import { ButtonHTMLAttributes } from "react";
-import { ButtonPage } from "./stylesButton";
+import * as C from './ButtonStyle'
+export type ButtonProps = {
+children: string;
+variant: 'primary' | 'secondary' | 'outline'
+}
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-   
-} 
 
-export function Button():ButtonProps{
+ function Button({children, variant}: ButtonProps){
     
     
     return(
-        <ButtonPage type='button'/>
+         <C.ButtonPage>{children}</C.ButtonPage>
             
         
 
     )
 }
+export default Button 

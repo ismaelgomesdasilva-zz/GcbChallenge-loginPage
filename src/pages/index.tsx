@@ -9,7 +9,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Router from "next/router";
-import { Button } from "../components/Button";
+
 function Home() {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
