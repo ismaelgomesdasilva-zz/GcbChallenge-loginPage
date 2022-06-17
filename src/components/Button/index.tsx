@@ -1,4 +1,4 @@
-import * as C from './ButtonStyle'
+import {ButtonPage, variantToColor} from './ButtonStyle'
 export type ButtonProps = {
 children: string;
 variant: 'primary' | 'secondary' | 'outline'
@@ -7,9 +7,9 @@ variant: 'primary' | 'secondary' | 'outline'
 
  function Button({children, variant}: ButtonProps){
     
-    
+    const {bgColor, color, hoverColor} = variantToColor[variant]
     return(
-         <C.ButtonPage>{children}</C.ButtonPage>
+         <ButtonPage bgColor={bgColor} color={color} hover={hoverColor}>{children}</ButtonPage>
             
         
 

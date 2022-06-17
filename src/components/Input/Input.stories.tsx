@@ -1,9 +1,9 @@
-import Button, { ButtonProps } from '.'
+import FormLabel, { FormLabelProps } from '.'
 import {ComponentMeta, Story} from '@storybook/react'
 
 export default{
-    title: 'Buttons/Button',
-    component: Button, 
+    title: 'Inputs/Input',
+    component: FormLabel, 
     argTypes: {
         variant:{
             defaultValue: 'primary',
@@ -13,8 +13,8 @@ export default{
             }
         }
     }
-} as ComponentMeta<typeof Button>
+} 
 
-export const ButtonSubmit: Story<ButtonProps> = (args) => (
-    <Button {...args}>Submit</Button>
+export const Form: Story<FormLabelProps> = (args) => (
+    <FormLabel {...args}></FormLabel>
 )
