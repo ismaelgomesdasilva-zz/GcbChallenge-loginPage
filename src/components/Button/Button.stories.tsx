@@ -1,20 +1,19 @@
-import Button, { ButtonProps } from '.'
-import {ComponentMeta, Story} from '@storybook/react'
+import Button from '.'
+import {ComponentStory, ComponentMeta} from '@storybook/react'
 
 export default{
-    title: 'Buttons/Button',
-    component: Button, 
-    argTypes: {
-        variant:{
-            defaultValue: 'primary',
-            control:{
-                type: 'select', 
-                values: ['primary', 'secondary', 'outline']
-            }
-        }
-    }
+    title: 'Components/Button',
+    Component: Button
+    
 } as ComponentMeta<typeof Button>
 
-export const ButtonSubmit: Story<ButtonProps> = (args) => (
-    <Button {...args}>Submit</Button>
-)
+const Template: ComponentStory<typeof Button> = args => <Button {...args}/>
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+    title: 'Entrar',
+    Onclick: () => {},
+    Color:'#FFFF',
+    BgColor:'#423b32'
+}

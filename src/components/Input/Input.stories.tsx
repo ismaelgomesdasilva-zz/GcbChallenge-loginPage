@@ -1,20 +1,21 @@
-import FormLabel, { FormLabelProps } from '.'
-import {ComponentMeta, Story} from '@storybook/react'
+import Input from '.'
+import {ComponentStory, ComponentMeta} from '@storybook/react'
 
 export default{
-    title: 'Inputs/Input',
-    component: FormLabel, 
-    argTypes: {
-        variant:{
-            defaultValue: 'primary',
-            control:{
-                type: 'select', 
-                values: ['primary', 'secondary', 'outline']
-            }
-        }
-    }
-} 
+    title: 'Components/Input',
+    Component: Input
+    
+} as ComponentMeta<typeof Input>
 
-export const Form: Story<FormLabelProps> = (args) => (
-    <FormLabel {...args}></FormLabel>
-)
+const Template: ComponentStory<typeof Input> = args => <Input {...args}/> 
+
+export const Primary = Template.bind({})
+
+
+Primary.args = {
+    type: 'Email ou senha',
+    placeholder: 'Insira o Email ou senha',
+    name: 'Email ou senha',
+    Onchange:() => {}
+    
+}

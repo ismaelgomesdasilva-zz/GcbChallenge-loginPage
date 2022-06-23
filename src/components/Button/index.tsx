@@ -1,18 +1,17 @@
-import {ButtonPage, variantToColor} from './ButtonStyle'
+import { ButtonPage} from './styleButton'
+
 export type ButtonProps = {
-children: string;
-variant: 'primary' | 'secondary' | 'outline'
+  Onclick:()=> void 
+  title: string
+  BgColor?: string
+  Color?: string
+  
 }
 
+const Button = ({title, Onclick }:ButtonProps) => (
+  
+    <ButtonPage Color={'#f5ca9c'} BgColor={'#423b32'} onClick={Onclick}>{title}</ButtonPage>
+  
+)
 
- function Button({children, variant}: ButtonProps){
-    
-    const {bgColor, color, hoverColor} = variantToColor[variant]
-    return(
-         <ButtonPage bgColor={bgColor} color={color} hover={hoverColor}>{children}</ButtonPage>
-            
-        
-
-    )
-}
-export default Button 
+export default Button;

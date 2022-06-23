@@ -1,18 +1,17 @@
-import {FormLabel} from './InputStyle'
-export type InputProps = {
-children: string;
-variant: 'primary'
-}
 
-
- function Input({children}){
+import { InputLabel } from "./styleinput"
+export type inputProps = {
+    type: string
+    placeholder: string
+    name: string
+    Onchange:(e)=> void
     
-
-    return(
-         <FormLabel>{children}</FormLabel>
-            
-        
-
-    )
 }
-export default Input 
+
+const Input = ({type, placeholder, name, Onchange }:inputProps) => (
+  
+    <InputLabel type={type} placeholder={placeholder} name={name} onChange={Onchange}/>
+  
+)
+
+export default Input;

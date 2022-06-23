@@ -49,33 +49,13 @@ h1{
     text-align: center;
 }
 
-@media (max-width: 1100px) {
-  h3{
+h3{
 
-    color:#ffffff;
-  } 
-  
-  }
+  color:#ffffff;
+} 
+`
 
 
-
-
-`;
-
-export const InputLabel = styled.input`
-  width: 75%;
-  border: none;
-  border-bottom: 2px solid #423b32;
-  margin-left: 50px;
-  margin-bottom: 20px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 36px;
-  color: #423b32;
-  
-`;
 export const LabelText = styled.label`
   font-family: "Poppins";
   font-style: normal;
@@ -91,61 +71,6 @@ export const LabelText = styled.label`
   }
 `;
 
-export const Description = styled.div`
-  width: 600px;
-  margin-left: 100px;
-  h1 {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 35px;
-    color: #423b32;
-    margin-bottom: 50px;
-    width: 500px;
-  }
-  p {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-
-    color: #423b32;
-    width: 400px;
-    margin-bottom: 80px;
-  }
-  @media (max-width: 1100px) {
-    display: none;
-  
-  }
-`;
-
-export const ButtonPage = styled.button`
-  width: 9.3rem;
-  height: 3.1rem;
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 2.2rem;
-  background: #423b32;
-  border-radius: 0.6rem;
-  text-align: center;
-
- margin: 1rem auto;
-  color: #f5ca9c;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
-  :hover {
-    background-color: #f5ca9c;
-    color: #423b32;
-    border: none;
-  }
-  @media (max-width: 1000px){
-    margin:1rem auto;
-    background-color: #fff;
-    color: #423b32;
-  }
-`;
 
 export const CheckboxButton = styled.input`
  background-color: #423b32;
@@ -168,4 +93,7 @@ display: flex;
 gap: 1rem;
 margin: 10px auto;
 cursor: pointer;
+align-items: center;
+justify-content: start;
+margin-left: 2.3rem;
 `
